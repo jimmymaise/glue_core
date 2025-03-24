@@ -1,0 +1,22 @@
+default:
+  image: public.ecr.aws/docker/library/python:3.7
+
+before_script:
+  - pip install poetry
+  - poetry install
+  - source `poetry env info --path`/bin/activate
+stages:
+  - build
+building:
+  stage: build
+  only:
+    - main
+  script:
+    - echo "This is the build stage package"
+    - poetry config repositories.gitlab "https://gitlab.mylong.io/api/v4/projects/$CI_PROJECT_ID/packages/pypi"
+    - poetry config http-basic.gitlab gitlab-ci-token "$CI_JOB_TOKEN"
+    - echo "Repository gitlab configured ..."
+    - poetry build
+    - echo "Build done ..."
+    - poetry publish --repository gitlab
+    - echo "Publishing done!"

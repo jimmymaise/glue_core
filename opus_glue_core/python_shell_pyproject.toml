@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "opus_glue_core"
+version = "0.1.0"
+description = "some longer description"
+authors = ["Some Author <some@author.io>"]
+
+[tool.poetry.dependencies]
+python = ">= 3.6"
+Jinja2 = "^3.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.4"

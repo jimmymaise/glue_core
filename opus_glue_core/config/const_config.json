@@ -1,0 +1,16 @@
+{
+  "is_use_env_config_file_for_debug": true,
+  "execution_date_for_debug": 20221202,
+  "etl_id": "clean_raw_tracking",
+  "env": "jh_prod",
+  "glue_default_args": {
+    "glue_dynamodb_table": "jackson_etl_config",
+    "etl_id": "clean_raw_tracking",
+    "schema_path": "s3://jh-prd-datalake-bronze/schemas/jh__raw_user_behaviors/20230516_20230616_adjusted.json",
+    "input_bucket": "jh-prd-datalake-bronze",
+    "input_prefix": "jh-prd-user-behavior-tracking-records/data",
+    "output_bucket": "jh-prd-datalake-bronze",
+    "output_prefix": "cleaned/jh_user_behaviors_v2",
+    "backfill_date": ""
+  }
+}

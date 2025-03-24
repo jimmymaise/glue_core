@@ -1,0 +1,16 @@
+{
+  "etl_id": "clean_raw_tracking",
+  "deploy_config": {
+    "glue_deploy_bucket": "mylong-datalake-prod",
+    "glue_deploy_s3_folder": "glue_etl/jackson/",
+    "glue_job_name": "clean_raw_tracking",
+    "glue_job_type": "glueetl",
+    "glue_service_role": "AWSGlueServiceRole-default-role",
+    "is_delta_lake": true,
+    "job_bookmark_option": "job-bookmark-disable",
+    "local_temp_folder_path": "/tmp",
+    "max_capacity": 2,
+    "max_concurrent_runs": 2
+  },
+  "execution_date_for_debug": null
+}
